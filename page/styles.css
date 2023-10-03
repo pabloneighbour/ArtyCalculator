@@ -1,0 +1,169 @@
+:root {
+  background-image: url("./source/concrete-wall.png");
+  background-color: #181919;
+  color: #ffff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
+
+.artyType-conteiner {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.artyType {
+  padding: 5px;
+  width: 60px;
+  height: 60px;
+  background-color: #111111;
+  border-radius: 10%;
+}
+
+.on{
+  background-color: #c78023;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.cordsInput-conteiner > label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.cordsInput {
+  display:inline;
+  background-color: #111010;
+  border: 2px solid #111010;
+  border-radius: 10px 10px 10px 10px;
+  height: 50px;
+  width: 150px;
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #ffff;
+}
+
+#azmWind {
+  width: 75px !important;
+}
+
+#sth{
+  display: inline-block;
+}
+
+.windGif {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  border-radius: 15px;
+}
+
+.windCords-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.windSthRange {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 10px;
+  background-color: #111010;
+  border-radius: 10px 10px 10px 10px;
+  vertical-align: middle;
+  height: 54px;
+  width: 110px;
+}
+
+.windSthRange > label {
+  display: inline-block;
+  padding-left: 28.6px;
+  padding-right: 28.6px;
+  vertical-align: middle;
+}
+
+.windSthRange > input {
+  display: inline-block;
+  width: 95px;
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  margin-top: 5px;
+  padding: 0;
+  accent-color: #c78023;
+  vertical-align: middle;
+}
+
+.result-conteiner {
+  display: inline-block;
+  border-top: 2px solid #4e4e4e;
+  margin-top: 6px;
+  height: 100px;
+  width: 378px;
+  font-size: large;
+}
+
+.result-conteiner > label {
+  margin-top: 10px;
+  display: block;
+}
+
+.distResult-container {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.distResult-container > label {
+  display: block;
+  font-weight: bold;
+}
+
+.azmResult-container {
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.azmResult-container > label {
+  display: block;
+  font-weight: bold;
+}
+
+.copyImg {
+  float: right;
+  margin-top: 10px;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+
+.copyImg:hover {
+  background-color: #111111;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.zolvin {
+  font-size: small;
+  color: #666666;
+  margin: 0;
+  margin-top: 40px;
+  margin-left: 45px;
+  padding: 0;
+}
+
+.outRange{
+  color:red !important
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>7HP - Calculadora</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="artyType-conteiner">
+    <img src="./source/120mm.png" alt="120mm" class="artyType" name="120mm" draggable="false">
+    <img src="./source/150mm.png" alt="150mm" class="artyType" name="150mm" draggable="false">
+    <img src="./source/300mm.png" alt="300mm" class="artyType" name="300mm" draggable="false">
+    <img src="./source/120mm-gb.png" alt="120mm-gb" class="artyType" name="120mm-gb" draggable="false">
+    <img src="./source/rkt.png" alt="rkt" class="artyType" name="rkt" draggable="false">
+  </div>
+
+  <div class="cordsInput-conteiner">
+    <label>Coordenadas de la artilleria</label>
+    <input type="number" class="cordsInput inputElement" id="distArty" min="0" placeholder="Distancia">
+    <input type="number" class="cordsInput inputElement" id="azmArty" min="0" max="359.9" placeholder="Azimuth">
+  </div>
+  
+  <div class="cordsInput-conteiner">
+    <label>Coordenadas del objetivo</label>
+    <input type="number" class="cordsInput inputElement" id="distObj" min="0" placeholder="Distancia">
+    <input type="number" class="cordsInput inputElement" id="azmObj" min="0" max="359.9" placeholder="Azimuth">
+  </div>
+
+  <div class="cordsInput-conteiner">
+    <label>Datos del viento</label>
+    <div class="windCords-conteiner">
+      <input type="number" class="cordsInput inputElement" id="azmWind" min="0" max="359.9" placeholder="Azimuth">
+      <div class="windSthRange">
+        <label for="windSth">Fuerza</label>
+        <input type="range" class="windSth" id="windSth" min="1" max="5">
+      </div>
+      <img src="./source/w3.gif" alt="wind" class="windGif" draggable="false">
+    </div>
+  </div>
+
+  <div class="result-conteiner">
+    <label> Coordenadas de tiro </label>
+    <div class="distResult-container">
+      <label>Distancia</label>
+      <span id="distFire">0m</span>
+    </div>
+    <div class="azmResult-container">
+      <label>Azimuth</label>
+      <span id="azmFire">0°</span>
+    </div>
+    <img class="copyImg" src="./source/copy.png" alt="copy" draggable="false">
+    <p class="zolvin">Z0lvin, haz llover tu ira sobre nuestros enemigos.</p>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
