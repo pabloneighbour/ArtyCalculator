@@ -5,7 +5,6 @@ const createWindow = () => {
     width: 400,
     height: 600,
     resizable: false,
-    icon: './page/source/7hp3.png',
     fullscreenable: false
   })
   window.setMenuBarVisibility(false)
@@ -14,12 +13,10 @@ const createWindow = () => {
 
   window.on('blur', () => {
     window.setOpacity(0.5)
-    console.log('blur')
   })
 
   window.on('focus', () => {
     window.setOpacity(1)
-    console.log('focus')
   })
 
   window.loadFile('./page/index.html')
