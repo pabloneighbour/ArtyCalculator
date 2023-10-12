@@ -1,6 +1,6 @@
 {
   "name": "arty-calculator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Calculadora de arty",
   "main": "main.js",
   "icon": "./page/source/icon128.png",
