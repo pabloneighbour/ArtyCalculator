@@ -84,7 +84,7 @@ const getCords = () => {
 }
 
 // number input handler
-const inputNumberElements = document.querySelectorAll('.inputElement')
+const inputNumberElements = document.querySelectorAll('.cordsInput')
 inputNumberElements.forEach((inputNumber) => {
   inputNumber.addEventListener('input', () => getCords())
 })

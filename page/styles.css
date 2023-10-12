@@ -147,12 +147,16 @@ input:focus {
   vertical-align: middle;
   width: 30px;
   height: 30px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .copyImg:hover {
   background-color: #111111;
   border-radius: 10px 10px 10px 10px;
+}
+
+.copyImg:active{
+  background-color: #474747;
 }
 
 .zolvin {

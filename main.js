@@ -5,7 +5,8 @@ const createWindow = () => {
     width: 400,
     height: 600,
     resizable: false,
-    fullscreenable: false
+    fullscreenable: false,
+    icon: './page/source/icon128.png'
   })
   window.setMenuBarVisibility(false)
   window.setAlwaysOnTop(true, 'screen')

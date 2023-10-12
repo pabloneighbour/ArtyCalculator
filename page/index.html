@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
   <title>7HP - Calculadora</title>
+  <link rel="icon" href="./source/icon128.png">
   <link href="styles.css" rel="stylesheet">
 </head>
 
@@ -19,20 +20,20 @@
 
   <div class="cordsInput-conteiner">
     <label>Coordenadas de la artillería</label>
-    <input type="number" class="cordsInput inputElement" id="distArty" min="0" placeholder="Distancia">
-    <input type="number" class="cordsInput inputElement" id="azmArty" min="0" max="359.9" placeholder="Azimuth">
+    <input type="number" class="cordsInput" id="distArty" min="0" placeholder="Distancia">
+    <input type="number" class="cordsInput" id="azmArty" min="0" max="359.9" placeholder="Azimuth">
   </div>
   
   <div class="cordsInput-conteiner">
     <label>Coordenadas del objetivo</label>
-    <input type="number" class="cordsInput inputElement" id="distObj" min="0" placeholder="Distancia">
-    <input type="number" class="cordsInput inputElement" id="azmObj" min="0" max="359.9" placeholder="Azimuth">
+    <input type="number" class="cordsInput" id="distObj" min="0" placeholder="Distancia">
+    <input type="number" class="cordsInput" id="azmObj" min="0" max="359.9" placeholder="Azimuth">
   </div>
 
   <div class="cordsInput-conteiner">
     <label>Datos del viento</label>
     <div class="windCords-conteiner">
-      <input type="number" class="cordsInput inputElement" id="azmWind" min="0" max="359.9" placeholder="Azimuth">
+      <input type="number" class="cordsInput" id="azmWind" min="0" max="359.9" placeholder="Azimuth">
       <div class="windSthRange">
         <label for="windSth">Fuerza</label>
         <input type="range" class="windSth" id="windSth" min="1" max="5">
@@ -57,4 +58,4 @@
   <script src="./index.js"></script>
 </body>
 
-</html>
+</html>   
