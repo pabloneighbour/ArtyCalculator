@@ -1,6 +1,12 @@
-const getOffset = (gun, wind) => {
-  const gunTypes = ['120mm', '150mm', 'rkt']
-  return (gunTypes.includes(gun) ? 25 * wind : gun === '120mm-gb' ? 10 * wind : gun === '300mm' ? 50 * wind : 0)
+const getOffset = (dist = 0, wind = 1) => {
+  const offsetTable = {
+    1: 0.07 * dist - 1,
+    2: 0.13 * dist + 1,
+    3: 0.2 * dist,
+    4: 0.27 * dist + 1.5,
+    5: 0.34 * dist + 0.5
+  }
+  return offsetTable[wind] || 0
 }
 
 const getVector = (dist, azm) => {
@@ -13,8 +19,8 @@ const getPolar = (v) => {
   return [dist, (azm < 0 ? azm + 360 : azm)]
 }
 
-const getWindVector = (wind, azm, gun) => {
-  const sth = getOffset(gun, wind)
+const getWindVector = (wind = 0, azm = 0, dist = 0) => {
+  const sth = getOffset(dist, wind)
   const vWind = getVector(sth, azm)
   return vWind
 }
@@ -23,10 +29,14 @@ const getFireVector = (gunPos, objPos, wind) => {
   return [objPos[0] - gunPos[0] - wind[0], objPos[1] - gunPos[1] - wind[1]]
 }
 
-const calCords = (gunType, gunPos, objPos, wind) => {
+const getDirectVectorMod = (gunPos, objPos) => {
+  return Math.hypot(objPos[0] - gunPos[0], objPos[1] - gunPos[1])
+}
+
+const calCords = (gunPos, objPos, wind) => {
   const gunCords = getVector(gunPos[0], gunPos[1])
   const objCords = getVector(objPos[0], objPos[1])
-  const windCords = getWindVector(wind[0], wind[1], gunType)
+  const windCords = getWindVector(wind[0], wind[1], getDirectVectorMod(gunCords, objCords))
   const fireVector = getPolar(getFireVector(gunCords, objCords, windCords))
   return fireVector
 }
@@ -75,7 +85,7 @@ const getCords = () => {
     Number(document.getElementById('azmWind').value)
   ]
 
-  const fireCords = calCords(gunType, gunPos, objPos, wind)
+  const fireCords = calCords(gunPos, objPos, wind)
 
   document.getElementById('distFire').textContent = fireCords[0].toFixed(1)
   document.getElementById('azmFire').textContent = fireCords[1].toFixed(1)
