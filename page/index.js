@@ -1,12 +1,12 @@
 const getOffset = (dist = 0, wind = 1) => {
   const offsetTable = {
-    1: 0.07 * dist - 1,
-    2: 0.13 * dist + 1,
-    3: 0.2 * dist,
-    4: 0.27 * dist + 1.5,
-    5: 0.34 * dist + 0.5
+    1: 0.07,
+    2: 0.13,
+    3: 0.2,
+    4: 0.27,
+    5: 0.34
   }
-  return offsetTable[wind] || 0
+  return ((offsetTable[wind] || 0) * dist + 0.4)
 }
 
 const getVector = (dist, azm) => {
@@ -19,10 +19,9 @@ const getPolar = (v) => {
   return [dist, (azm < 0 ? azm + 360 : azm)]
 }
 
-const getWindVector = (wind = 0, azm = 0, dist = 0) => {
+const getWindVector = (wind = 1, azm = 0, dist = 0) => {
   const sth = getOffset(dist, wind)
-  const vWind = getVector(sth, azm)
-  return vWind
+  return getVector(sth, azm)
 }
 
 const getFireVector = (gunPos, objPos, wind) => {
@@ -55,10 +54,11 @@ const inRange = () => {
 
   // Check if distance is in range for gun type
   const range = {
+    gunboat: [75, 100],
     '120mm': [100, 250],
     '150mm': [200, 350],
+    '150mm-p': [120, 250],
     '300mm': [400, 1000],
-    '120mm-gb': [50, 100],
     rkt: [225, 350]
   }
 
